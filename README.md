@@ -5,3 +5,4 @@
 # Log
 
 - `react-native init RNHybridApp`
+- create New Xcode Project & replace /ios folder
