@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C319AF48E8D2B70F49FCC149 /* libPods-RNHybridApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABC2843236C6F123736036 /* libPods-RNHybridApp.a */; };
 		D8B09E4F20EF759500C00870 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B09E4E20EF759500C00870 /* AppDelegate.m */; };
 		D8B09E5220EF759500C00870 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B09E5120EF759500C00870 /* ViewController.m */; };
 		D8B09E5520EF759500C00870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B09E5320EF759500C00870 /* Main.storyboard */; };
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39ABC2843236C6F123736036 /* libPods-RNHybridApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHybridApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		590B7E94228F55D358C57E31 /* Pods-RNHybridApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybridApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybridApp/Pods-RNHybridApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BE747051728B2B349026EE01 /* Pods-RNHybridApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybridApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybridApp/Pods-RNHybridApp.release.xcconfig"; sourceTree = "<group>"; };
 		D8B09E4A20EF759500C00870 /* RNHybridApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNHybridApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B09E4D20EF759500C00870 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8B09E4E20EF759500C00870 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C319AF48E8D2B70F49FCC149 /* libPods-RNHybridApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9627D3AE9E96E812332BA576 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				590B7E94228F55D358C57E31 /* Pods-RNHybridApp.debug.xcconfig */,
+				BE747051728B2B349026EE01 /* Pods-RNHybridApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBA25A587079922D8B1C7BEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39ABC2843236C6F123736036 /* libPods-RNHybridApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8B09E4120EF759500C00870 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,8 @@
 				D8B09E6520EF759800C00870 /* RNHybridAppTests */,
 				D8B09E7020EF759800C00870 /* RNHybridAppUITests */,
 				D8B09E4B20EF759500C00870 /* Products */,
+				9627D3AE9E96E812332BA576 /* Pods */,
+				CBA25A587079922D8B1C7BEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8B09E7620EF759800C00870 /* Build configuration list for PBXNativeTarget "RNHybridApp" */;
 			buildPhases = (
+				7BA0D37D35758956EDF34F55 /* [CP] Check Pods Manifest.lock */,
 				D8B09E4620EF759500C00870 /* Sources */,
 				D8B09E4720EF759500C00870 /* Frameworks */,
 				D8B09E4820EF759500C00870 /* Resources */,
@@ -261,6 +286,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7BA0D37D35758956EDF34F55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNHybridApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8B09E4620EF759500C00870 /* Sources */ = {
@@ -437,15 +483,13 @@
 		};
 		D8B09E7720EF759800C00870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590B7E94228F55D358C57E31 /* Pods-RNHybridApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,15 +498,13 @@
 		};
 		D8B09E7820EF759800C00870 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE747051728B2B349026EE01 /* Pods-RNHybridApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,11 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,11 +533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,11 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,11 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
