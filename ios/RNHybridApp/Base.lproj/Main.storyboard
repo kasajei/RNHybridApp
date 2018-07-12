@@ -19,11 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-9J-zkz">
-                                <rect key="frame" x="75" y="318" width="225" height="30"/>
+                                <rect key="frame" x="75" y="198" width="225" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to ReactNativeViewController"/>
                                 <connections>
                                     <segue destination="O3I-zL-OIx" kind="show" id="agj-Qb-oS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGP-D2-lho">
+                                <rect key="frame" x="148" y="325" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show App2"/>
+                                <connections>
+                                    <action selector="actionOfShowApp2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wz0-8J-Z31"/>
                                 </connections>
                             </button>
                         </subviews>

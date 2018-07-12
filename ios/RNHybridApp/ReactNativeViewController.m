@@ -7,6 +7,7 @@
 //
 
 #import "ReactNativeViewController.h"
+#import <React/RCTRootView.h>
 
 @interface ReactNativeViewController ()
 
@@ -15,8 +16,20 @@
 @implementation ReactNativeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+    
+    RCTRootView *rootView =
+    [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
+                                moduleName: @"RNHybridApp"
+                         initialProperties:@{@"fromNative" : @"Hello RNHybridApp"}
+                             launchOptions: nil];
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.view = rootView;
+//    [self presentViewController:vc animated:YES completion:nil];
+    self.view = rootView;
+    [super viewDidLoad];
+
 }
 
 - (void)didReceiveMemoryWarning {
