@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <React/RCTBridgeModule.h>
 
-@interface ReactNativeViewController : ViewController
+@interface ReactNativeViewController : ViewController<RCTBridgeModule>
 
 @end

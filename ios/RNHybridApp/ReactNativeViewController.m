@@ -8,12 +8,35 @@
 
 #import "ReactNativeViewController.h"
 #import <React/RCTRootView.h>
+#import <React/RCTLog.h>
 
 @interface ReactNativeViewController ()
 
 @end
 
 @implementation ReactNativeViewController
+RCT_EXPORT_MODULE();
+RCT_EXPORT_METHOD(goBack)
+{
+    RCTLogInfo(@"navigation go back! %@" , [self class]);
+    [self goBackNavigation];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
+
+- (void) goBackNavigation{
+    NSLog(@"go back %@", self.navigationController);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"go back %@", self.navigationController);
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
 
 - (void)viewDidLoad {
     // Do any additional setup after loading the view.
@@ -28,6 +51,11 @@
                              launchOptions: nil];
     self.view = rootView;
     [self.navigationController setNavigationBarHidden:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

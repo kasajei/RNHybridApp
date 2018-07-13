@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C319AF48E8D2B70F49FCC149 /* libPods-RNHybridApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABC2843236C6F123736036 /* libPods-RNHybridApp.a */; };
+		D841D1B220F8848100DA5582 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D841D1B120F8848100DA5582 /* NavigationManager.m */; };
 		D8B09E4F20EF759500C00870 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B09E4E20EF759500C00870 /* AppDelegate.m */; };
 		D8B09E5220EF759500C00870 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B09E5120EF759500C00870 /* ViewController.m */; };
 		D8B09E5520EF759500C00870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B09E5320EF759500C00870 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 		39ABC2843236C6F123736036 /* libPods-RNHybridApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNHybridApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		590B7E94228F55D358C57E31 /* Pods-RNHybridApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybridApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybridApp/Pods-RNHybridApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE747051728B2B349026EE01 /* Pods-RNHybridApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNHybridApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNHybridApp/Pods-RNHybridApp.release.xcconfig"; sourceTree = "<group>"; };
+		D841D1B020F8848100DA5582 /* NavigationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
+		D841D1B120F8848100DA5582 /* NavigationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationManager.m; sourceTree = "<group>"; };
 		D8B09E4A20EF759500C00870 /* RNHybridApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNHybridApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B09E4D20EF759500C00870 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8B09E4E20EF759500C00870 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D841D1AF20F8844D00DA5582 /* NativeModules */ = {
+			isa = PBXGroup;
+			children = (
+				D841D1B020F8848100DA5582 /* NavigationManager.h */,
+				D841D1B120F8848100DA5582 /* NavigationManager.m */,
+			);
+			path = NativeModules;
+			sourceTree = "<group>";
+		};
 		D8B09E4120EF759500C00870 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +140,7 @@
 		D8B09E4C20EF759500C00870 /* RNHybridApp */ = {
 			isa = PBXGroup;
 			children = (
+				D841D1AF20F8844D00DA5582 /* NativeModules */,
 				D8B09E4D20EF759500C00870 /* AppDelegate.h */,
 				D8B09E4E20EF759500C00870 /* AppDelegate.m */,
 				D8B09E5020EF759500C00870 /* ViewController.h */,
@@ -316,6 +329,7 @@
 				D8B09E5220EF759500C00870 /* ViewController.m in Sources */,
 				D8B09E5D20EF759800C00870 /* main.m in Sources */,
 				D8B09E4F20EF759500C00870 /* AppDelegate.m in Sources */,
+				D841D1B220F8848100DA5582 /* NavigationManager.m in Sources */,
 				D8B09E8120EF76F900C00870 /* ReactNativeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +503,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -504,7 +521,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,7 +538,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,7 +557,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,7 +575,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,7 +593,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU9XP2BA87;
 				INFOPLIST_FILE = RNHybridAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasajei.RNHybridAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

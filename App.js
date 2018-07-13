@@ -8,7 +8,8 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, HeaderBackButton } from 'react-navigation';
+import { NativeModules } from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,7 +21,14 @@ const instructions = Platform.select({
 class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: "HomeScreen"
+      title: "HomeScreen",
+      headerLeft:
+        <HeaderBackButton
+          title="Back"
+          onPress={() => {
+            NativeModules.ReactNativeViewController.goBack()
+          }}
+        />,
     }
   }
   render() {
