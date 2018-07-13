@@ -8,6 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,14 +17,19 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+class HomeScreen extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "HomeScreen"
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Text style={styles.instructions}>This value is from Native :{this.props.fromNative}</Text>
+        <Text style={styles.instructions}>This value is from Native :{this.props.screenProps.fromNative}</Text>
       </View>
     );
   }
@@ -47,3 +53,18 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+
+const RootStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+});
+
+class App extends Component {
+  render() {
+    return <RootStack screenProps={this.props} />
+  }
+}
+
+export default App

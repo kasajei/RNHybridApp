@@ -11,6 +11,7 @@ target 'RNHybridApp' do
     'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
     'RCTText',
     'RCTNetwork',
+    'RCTLinkingIOS',
     'RCTWebSocket', # Needed for debugging
     'RCTAnimation', # Needed for FlatList and animations running on native UI thread
     # Add any other subspecs you want to use in your project
