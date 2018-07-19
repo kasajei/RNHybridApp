@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <React/RCTRootView.h>
+#import "NavigationManager.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disMissEvent) name:NAVIGATION_MANAGER_GO_BACK object:nil];
 }
 
 
@@ -37,7 +39,11 @@
         UIViewController *vc = [[UIViewController alloc] init];
         vc.view = rootView;
         [self presentViewController:vc animated:YES completion:nil];
+   
 }
 
+- (void)disMissEvent{
+     [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

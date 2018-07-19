@@ -7,7 +7,8 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { NativeModules } from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -24,6 +25,11 @@ export default class App2 extends Component {
         <Text style={styles.instructions}>To get started, edit App2.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text style={styles.instructions}>This value is from Native :{this.props.fromNative}</Text>
+        <Button
+          onPress={() => { NativeModules.NavigationManager.goBack() }}
+          title="Go back to Home"
+          color="#841584"
+        />
       </View>
     );
   }

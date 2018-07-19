@@ -10,6 +10,8 @@
 #import <React/RCTRootView.h>
 #import <React/RCTLog.h>
 
+NSString *const GO_BACK_NAVIGATION = @"GO_BACK_NAVIGATION";
+
 @interface ReactNativeViewController ()
 
 @end
@@ -18,10 +20,8 @@
 RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(goBack)
 {
-    RCTLogInfo(@"navigation go back! %@" , [self class]);
-    [self goBackNavigation];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.navigationController popViewControllerAnimated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:GO_BACK_NAVIGATION object:self userInfo:nil];
     });
 }
 
@@ -51,6 +51,8 @@ RCT_EXPORT_METHOD(goBack)
                              launchOptions: nil];
     self.view = rootView;
     [self.navigationController setNavigationBarHidden:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goBackNavigation) name:GO_BACK_NAVIGATION object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

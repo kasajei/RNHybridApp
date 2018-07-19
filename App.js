@@ -42,7 +42,6 @@ class HomeScreen extends Component {
           onPress={() => { this.props.navigation.navigate("NextScreen") }}
           title="Go to NextScreen"
           color="#841584"
-          accessibilityLabel="Learn more about this purple button"
         />
       </View>
     )
