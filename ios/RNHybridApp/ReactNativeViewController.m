@@ -9,6 +9,7 @@
 #import "ReactNativeViewController.h"
 #import <React/RCTRootView.h>
 #import <React/RCTLog.h>
+#import <React/RCTBundleURLProvider.h>
 
 NSString *const GO_BACK_NAVIGATION = @"GO_BACK_NAVIGATION";
 
@@ -42,7 +43,9 @@ RCT_EXPORT_METHOD(goBack)
     // Do any additional setup after loading the view.
     [super viewDidLoad];
     
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+    NSURL *jsCodeLocation;
+    
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
     
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
