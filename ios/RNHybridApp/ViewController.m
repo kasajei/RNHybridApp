@@ -19,9 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disMissEvent) name:NAVIGATION_MANAGER_GO_BACK object:nil];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissEvent) name:NAVIGATION_MANAGER_GO_BACK object:nil];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,7 +41,7 @@
    
 }
 
-- (void)disMissEvent{
+- (void)dismissEvent{
      [self dismissViewControllerAnimated:YES completion:nil];
 }
 

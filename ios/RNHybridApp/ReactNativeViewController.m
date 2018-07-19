@@ -57,7 +57,12 @@ RCT_EXPORT_METHOD(goBack)
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-//    [self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goBackNavigation) name:GO_BACK_NAVIGATION object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
